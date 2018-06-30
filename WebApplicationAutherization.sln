@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationAutherization", "WebApplicationAutherization\WebApplicationAutherization.csproj", "{A7D93AE4-8A73-431B-A80A-9A33CF53DB1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7D93AE4-8A73-431B-A80A-9A33CF53DB1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7D93AE4-8A73-431B-A80A-9A33CF53DB1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7D93AE4-8A73-431B-A80A-9A33CF53DB1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7D93AE4-8A73-431B-A80A-9A33CF53DB1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4AEA705-F755-4794-91B2-EB188148E6D6}
+	EndGlobalSection
+EndGlobal
