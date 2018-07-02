@@ -2,6 +2,43 @@
     ViewBag.Title = "Home Page";
 }
 
+
+@if (ViewBag.Message != null)
+{
+    <div class="jumbotron">
+        @if (User.Identity.IsAuthenticated)
+        {
+            if (ViewBag.Message != null && ViewBag.Message == "Edit")// Convert.ToString(ViewBag.Message == "kanbuarasu27@gmail.com"))
+            {
+                <h5>Welcome User @(User.Identity.IsAuthenticated ? HttpContext.Current.User.Identity.Name : "Guest")</h5>
+                <a href="@Url.Action("CanEditView", "Cm")">Click Here To <b>Edit</b> the Employee Details</a>
+            }
+            else if (ViewBag.Message != null && ViewBag.Message == "Read")
+            {
+                <h5>Welcome User @(User.Identity.IsAuthenticated ? HttpContext.Current.User.Identity.Name : "Guest")</h5>
+                <a href="@Url.Action("Index", "Cm")">Click Here To <b>View</b> Employee Details</a>
+
+            }
+            else if (ViewBag.Message != null && ViewBag.Message == "Create")
+            {
+                <h5>Welcome User @(User.Identity.IsAuthenticated ? HttpContext.Current.User.Identity.Name : "Guest")</h5>
+                <a href="@Url.Action("CanCreateView", "Cm")">Click Here To <b>Create</b> Employee Details</a>
+            }
+            else
+            {
+                <h5>Welcome User @(User.Identity.IsAuthenticated ? HttpContext.Current.User.Identity.Name : "Guest")</h5>
+                <a href="@Url.Action("CanDeleteView", "Cm")">Click Here To <b>Delete</b> Employee Details</a>
+            }
+
+
+        }
+    </div>
+}
+
+
+<br />
+<br />
+
 <div class="jumbotron">
     <h1>ASP.NET</h1>
     <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>

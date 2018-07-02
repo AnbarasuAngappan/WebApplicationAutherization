@@ -283,6 +283,9 @@
     <Content Include="Views\Cm\Details.cshtml" />
     <Content Include="Views\Cm\Edit.cshtml" />
     <Content Include="Views\Cm\Index.cshtml" />
+    <Content Include="Views\Cm\CanEditView.cshtml" />
+    <Content Include="Views\Cm\canDeleteView.cshtml" />
+    <Content Include="Views\Cm\canCreateView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,20 +1,21 @@
 ﻿@model IEnumerable<WebApplicationAutherization.Models.Contact>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "canCreateView";
 }
 
-<h2>Employee Detils</h2>
-<h6>(List of all the Employee Details)</h6>
+<h2>Employee Create View</h2>
 
-@*<p>
-        @Html.ActionLink("Create New", "Create")
-    </p>*@
 @if (User.Identity.IsAuthenticated)
 {
     <h4>Welcome User @(User.Identity.IsAuthenticated ? HttpContext.Current.User.Identity.Name : "Guest")</h4>
     @*<a href="@Url.Action("SignOut","Home")">Logout</a>*@
 }
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
 <table class="table">
     <tr>
         <th>
@@ -60,9 +61,10 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
+                @*@Html.ActionLink("Create New", "Create")*@
                 @*@Html.ActionLink("Edit", "Edit", new { id = item.ContactID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ContactID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ContactID })*@
+        @Html.ActionLink("Details", "Details", new { id = item.ContactID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ContactID })*@
             </td>
         </tr>
     }

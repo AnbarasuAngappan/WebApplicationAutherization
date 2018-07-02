@@ -76,12 +76,12 @@ namespace WebApplicationAutherization.Migrations
             IdentityResult ir;
 
             var rm = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-            ir = rm.Create(new IdentityRole("canEdit"));
+            ir = rm.Create(new IdentityRole("canCreate"));
 
             var um = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
             var user = new ApplicationUser()
             {
-                UserName = "bala@gmail.com",
+                UserName = "indhu@gmail.com",
 
             };
             ir = um.Create(user, "sai");
@@ -89,9 +89,8 @@ namespace WebApplicationAutherization.Migrations
             if (ir.Succeeded == false)
                 return ir.Succeeded;
 
-            ir = um.AddToRoles(user.Id, "canEdit");
-                return ir.Succeeded;
-            
+            ir = um.AddToRoles(user.Id, "canCreate");
+                return ir.Succeeded;            
             
         }
 
