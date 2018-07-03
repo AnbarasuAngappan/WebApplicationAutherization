@@ -12,9 +12,28 @@
     @*<a href="@Url.Action("SignOut","Home")">Logout</a>*@
 }
 
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
+@*<div class="btn-group">
+        <a id="createEditUserModal" data-toggle="modal" asp-action="AddUser" data-target="#modal-action-user" class="btn btn-primary">
+            <i class="glyphicon glyphicon-plus"></i>  Add User
+        </a>
+    </div>*@
+
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+
+
+<input type='button' class="btn btn-success" value='Create User' onclick='window.location = "@Url.Action("Create", "Cm")";' />
+
+@*<input type="button" class="btn btn-success" value="Create User" onclick='window.location="@Url.Action("Create", "Cm")"' />*@
+
+@*<div class="btn-group">
+    <a asp-action="AddUser" class="btn btn-primary">
+        <i class="glyphicon glyphicon-plus"></i>AddUser
+    </a>
+</div>*@
+
 
 <table class="table">
     <tr>
@@ -63,8 +82,8 @@
             <td>
                 @*@Html.ActionLink("Create New", "Create")*@
                 @*@Html.ActionLink("Edit", "Edit", new { id = item.ContactID }) |
-        @Html.ActionLink("Details", "Details", new { id = item.ContactID }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.ContactID })*@
+                    @Html.ActionLink("Details", "Details", new { id = item.ContactID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ContactID })*@
             </td>
         </tr>
     }
