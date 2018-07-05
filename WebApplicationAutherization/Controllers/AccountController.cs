@@ -15,6 +15,7 @@ namespace WebApplicationAutherization.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+        ApplicationDbContext dbContext = new ApplicationDbContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -72,14 +73,31 @@ namespace WebApplicationAutherization.Controllers
             {
                 return View(model);
             }
-
+            var user = dbContext.Users.ToList().Find(x => x.Email == model.Email);
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    if (UserManager.IsInRole(user.Id, "canEdit"))
+                    {
+                        return RedirectToAction("CanEditView", "Cm");
+                    }
+                    else if(UserManager.IsInRole(user.Id, "CanRead"))
+                    {
+                        return RedirectToAction("Index", "Cm");
+                    }
+                    else if(UserManager.IsInRole(user.Id, "canCreate"))
+                    {
+                        return RedirectToAction("CanCreateView", "Cm");
+                    }
+                    else if(UserManager.IsInRole(user.Id, "canDelete"))
+                    {
+                        return RedirectToAction("CanDeleteView", "Cm");
+                    }
+                    else
+                        return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
