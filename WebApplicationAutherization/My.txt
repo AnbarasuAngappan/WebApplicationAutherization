@@ -1,0 +1,30 @@
+
+
+
+S.No
+Details
+Operation CURD
+1.
+kanbuarasu27@gmail.com
+Saibaba@27
+canEdit / canUpdate
+
+
+2.
+balaji@gmail.com	
+Balaji@27
+canRead
+
+
+3.
+indhu@gmail.com	
+Indhu@27
+canCreate
+
+
+4.
+kiru@gmail.com
+Kiru@27
+canDelete
+
+
